@@ -3,9 +3,11 @@ import type { Post } from "contentlayer/generated"
 import Link from "next/link"
 
 import { allPosts } from "contentlayer/generated"
-import { FaAngleRight } from "react-icons/fa6"
+import { FaArrowRightLong } from "react-icons/fa6"
 
 import { Container } from "@/components/container"
+
+import { cn } from "@/lib/utils"
 import { sortPosts, postDate } from "@/lib/contentlayer"
 
 export default function Page() {
@@ -17,10 +19,10 @@ export default function Page() {
           Welcome!
         </h2>
       </section>
-      <Container className="pb-16 pt-8">
-        <div className="mx-auto max-w-2xl space-y-16">
-          {posts.map(post => (
-            <Article key={post.slug} post={post} />
+      <Container className="py-8">
+        <div className="mx-auto max-w-5xl space-y-10 divide-y divide-gray-200">
+          {posts.map((post, index) => (
+            <Article key={post.slug} post={post} isFirst={index === 0} />
           ))}
         </div>
       </Container>
@@ -30,46 +32,45 @@ export default function Page() {
 
 type ArticleProps = {
   post: Post
+  isFirst: boolean
 }
 
-function Article({ post }: ArticleProps) {
+function Article({ post, isFirst }: ArticleProps) {
   return (
-    <article className="group relative">
-      <div
-        className="absolute -inset-x-4 -inset-y-2.5 group-hover:bg-slate-50
-          sm:rounded-xl md:-inset-x-6 md:-inset-y-4"
-      />
-      <div className="relative">
+    <article className={cn("md:flex md:gap-x-28", !isFirst && "pt-10")}>
+      <div>
         <dl>
           <dt className="sr-only">Date</dt>
           <dd className="whitespace-nowrap text-sm leading-6 text-gray-500">
             <time dateTime={post.date}>{postDate(post.date)}</time>
           </dd>
         </dl>
-        <h3 className="pt-1.5 text-lg font-bold tracking-tight text-gray-900">
-          {post.title}
-        </h3>
-        <div className="relative mb-4 mt-2 line-clamp-2 text-gray-900">
-          <p>{post.summary}</p>
-        </div>
       </div>
-      <Link
-        href={`/posts/${post.slug}`}
-        className="flex items-center text-sm font-medium text-gray-900"
-      >
-        <span
-          className="absolute -inset-x-4 -inset-y-2.5 sm:rounded-xl
-            md:-inset-x-6 md:-inset-y-4"
-        />
-        <span className="relative">
-          Read more
-          <span className="sr-only">
-            {", "}
-            {`${post.title}`}
-          </span>
-        </span>
-        <FaAngleRight className="relative ml-1 h-3 w-3 shrink-0" aria-hidden="true" />
-      </Link>
+      <div className="pr-3 md:pr-6 lg:pr-20">
+        <Link href={`/posts/${post.slug}`} className="group">
+          <h2
+            className="text-lg font-extrabold tracking-tight text-gray-900
+              group-hover:text-gray-700"
+          >
+            {post.title}
+          </h2>
+          <div className="line-clamp-2 pt-4 text-gray-600">
+            <p>{post.summary}</p>
+          </div>
+          <div className="pt-4">
+            <span
+              className="flex items-center gap-x-2 text-sm font-medium
+                text-sky-500"
+            >
+              Read more
+              <FaArrowRightLong
+                className="h-3.5 w-3.5 duration-300 group-hover:ml-1"
+                aria-hidden="true"
+              />
+            </span>
+          </div>
+        </Link>
+      </div>
     </article>
   )
 }
