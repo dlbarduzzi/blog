@@ -1,7 +1,11 @@
 import type { Config } from "tailwindcss"
 
 const config: Config = {
-  content: ["./src/app/**/*.{ts,tsx}", "./src/components/**/*.{ts,tsx}"],
+  content: [
+    "./src/app/**/*.{ts,tsx}",
+    "./src/content/**/*.{md,mdx}",
+    "./src/components/**/*.{ts,tsx}",
+  ],
   darkMode: "class",
   theme: {
     extend: {
@@ -11,7 +15,11 @@ const config: Config = {
       },
     },
   },
-  plugins: [require("@tailwindcss/forms"), require("tailwindcss-animate")],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+  ],
 }
 
 export default config
