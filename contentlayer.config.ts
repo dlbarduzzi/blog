@@ -1,5 +1,7 @@
 import type { LocalDocument, ComputedFields } from "contentlayer/source-files"
 
+import rehypePrettyCode from "rehype-pretty-code"
+
 import { defineDocumentType, makeSource } from "contentlayer/source-files"
 
 const computedFields: ComputedFields = {
@@ -33,4 +35,16 @@ export const Post = defineDocumentType(() => ({
 export default makeSource({
   contentDirPath: "./src/content",
   documentTypes: [Post],
+  mdx: {
+    rehypePlugins: [
+      [
+        // @todo: Find a better type definition.
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        rehypePrettyCode as any,
+        {
+          theme: "material-theme-darker",
+        },
+      ],
+    ],
+  },
 })

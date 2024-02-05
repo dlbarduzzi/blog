@@ -1,5 +1,62 @@
 ---
-date: "2024-01-30"
+date: "2024-02-05"
 title: Sample Markdown Document
 summary: "Building a developer blog with nextjs and contentlayer."
 ---
+
+This is a [Next.js](https://nextjs.org/) app rendering a markdown document using
+[contentlayer](https://contentlayer.dev/) to transform the file content into type-safe
+data that can be easily imported into our app.
+
+## Examples
+
+Here are some examples showing how a markdown document is traslated into HTML content.
+
+### Lists
+
+The technology stack used for this app:
+
+- [nextjs](https://nextjs.org/) - everything you need to build great products on the
+  web.
+- [typescript](https://www.typescriptlang.org/) - javascript with syntax for types.
+- [tailwindcss](https://tailwindcss.com/) - a utility-first CSS framework.
+- [contentlayer](https://contentlayer.dev/) - transform your content into type-safe JSON
+  data.
+
+### Blockquotes
+
+My favorite software text editors are `Vim` and `VS Code`.
+
+### Code Blocks
+
+A simple code block.
+
+```jsx
+import { allPosts } from "contentlayer/generated"
+
+async function getPostFromParams(slug: string) {
+  const post = allPosts.find(post => post.slugAsParams === slug)
+
+  if (!post) {
+    return null
+  }
+
+  return post
+}
+```
+
+A code block with filename, line numbers and lines highlighted.
+
+```jsx title="pages/posts/[slug].tsx" showLineNumbers {1, 6-8}
+import { allPosts } from "contentlayer/generated"
+
+async function getPostFromParams(slug: string) {
+  const post = allPosts.find(post => post.slugAsParams === slug)
+
+  if (!post) {
+    return null
+  }
+
+  return post
+}
+```
