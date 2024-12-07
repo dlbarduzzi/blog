@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { allPosts } from "content-collections"
 
 export default function Page() {
@@ -9,9 +10,10 @@ export default function Page() {
       <div className="mx-auto max-w-7xl px-4">
         <div className="space-y-6">
           {allPosts.map(post => (
-            <div
+            <Link
               key={post.title}
-              className="rounded-md border border-gray-300 px-4 py-5"
+              href={`/blog/${post._meta.path}`}
+              className="block rounded-md border border-gray-300 px-4 py-5"
             >
               <p className="text-sm text-gray-500">
                 {new Date(post.date).toLocaleDateString("en-us", {
@@ -23,7 +25,7 @@ export default function Page() {
               <div>
                 <h3>{post.title}</h3>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
