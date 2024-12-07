@@ -1,7 +1,6 @@
 import { allPosts } from "content-collections"
 
 export default function Page() {
-  console.log(allPosts)
   return (
     <div className="bg-white">
       <div className="py-8">
@@ -14,7 +13,16 @@ export default function Page() {
               key={post.title}
               className="rounded-md border border-gray-300 px-4 py-5"
             >
-              <h3>{post.title}</h3>
+              <p className="text-sm text-gray-500">
+                {new Date(post.date).toLocaleDateString("en-us", {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </p>
+              <div>
+                <h3>{post.title}</h3>
+              </div>
             </div>
           ))}
         </div>
