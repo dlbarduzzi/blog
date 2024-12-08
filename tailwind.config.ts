@@ -6,6 +6,23 @@ export default {
   content: ["./src/**/*.{ts,tsx}"],
   darkMode: "class",
   theme: {
+    colors: {
+      background: "var(--background)",
+      foreground: "var(--foreground)",
+      red: "var(--red)",
+      orange: "var(--orange)",
+      yellow: "var(--yellow)",
+      green: "var(--green)",
+      blue: "var(--blue)",
+      magenta: "var(--magenta)",
+      gray1: "var(--gray1)",
+      gray2: "var(--gray2)",
+      gray3: "var(--gray3)",
+      gray4: "var(--gray4)",
+      gray5: "var(--gray5)",
+      gray6: "var(--gray6)",
+      gray7: "var(--gray7)",
+    },
     extend: {
       fontFamily: {
         sans: ["var(--font-geist-sans)"],

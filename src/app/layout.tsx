@@ -50,7 +50,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head />
       <body
         className={cn(
-          "min-h-screen bg-white font-sans text-base text-gray-900 antialiased",
+          "min-h-screen bg-background font-sans text-base text-foreground antialiased",
           geistSans.variable,
           geistMono.variable
         )}
