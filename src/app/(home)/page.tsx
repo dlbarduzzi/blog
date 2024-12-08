@@ -1,14 +1,17 @@
 import Link from "next/link"
+
 import { allPosts } from "content-collections"
+import { ToggleTheme } from "@/components/toggle-theme"
 
 export default function Page() {
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-black">
       <div className="py-8">
         <div className="text-center">Welcome to my blog!</div>
       </div>
       <div className="mx-auto max-w-7xl px-4">
-        <div className="space-y-6">
+        <ToggleTheme />
+        <div className="mt-8 space-y-6">
           {allPosts.map(post => (
             <Link
               key={post.title}
