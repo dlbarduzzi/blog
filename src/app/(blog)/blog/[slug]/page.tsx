@@ -1,6 +1,7 @@
 import { Mdx } from "@/components/mdx"
 import { notFound } from "next/navigation"
 import { allPosts } from "content-collections"
+import { Container } from "@/components/container"
 
 export function generateStatictParams(): { slug: string }[] {
   return allPosts.map(post => ({ slug: post._meta.path }))
@@ -21,11 +22,10 @@ export default async function Page({ params }: Params) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8">
-      <div>
-        <h1>{post.title}</h1>
-      </div>
-      <div className="mt-10">
-        <Mdx code={post.body} />
+      <div className="rounded-lg border-2 border-gray2 px-8 py-10">
+        <Container className="max-w-4xl">
+          <Mdx code={post.body} />
+        </Container>
       </div>
     </div>
   )

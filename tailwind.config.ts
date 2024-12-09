@@ -1,6 +1,8 @@
 import type { Config } from "tailwindcss"
+
 import tailwindcssForms from "@tailwindcss/forms"
 import tailwindcssAnimate from "tailwindcss-animate"
+import tailwindTypography from "@tailwindcss/typography"
 
 export default {
   content: ["./src/**/*.{ts,tsx}"],
@@ -47,7 +49,28 @@ export default {
         "collapsible-up": "collapsible-up 0.2s ease-out",
         "soft-spin": "soft-spin 1s ease-in-out infinite",
       },
+      typography: (theme: (path: string) => string) => ({
+        DEFAULT: {
+          css: {
+            h2: {
+              color: theme("colors.red"),
+              fontSize: theme("fontSize.2xl"),
+              fontWeight: theme("fontWeight.normal"),
+              letterSpacing: theme("letterSpacing.tight"),
+              marginTop: theme("margin.0"),
+              marginBottom: theme("margin.5"),
+            },
+            p: {
+              color: theme("colors.foregorund"),
+              fontSize: theme("fontSize.lg"),
+            },
+            strong: {
+              fontWeight: theme("fontWeight.extrabold"),
+            },
+          },
+        },
+      }),
     },
   },
-  plugins: [tailwindcssForms, tailwindcssAnimate],
+  plugins: [tailwindcssForms, tailwindcssAnimate, tailwindTypography],
 } satisfies Config
