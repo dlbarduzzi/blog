@@ -21,11 +21,19 @@ export default async function Page({ params }: Params) {
   }
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8">
-      <div className="rounded-lg border-2 border-gray2 px-8 py-10">
-        <Container className="max-w-4xl">
+    <div className="mx-auto min-h-full w-full max-w-5xl bg-background">
+      <div className="px-6 py-12 md:px-12 lg:px-20">
+        <div className="text-center">
+          <h1 className="text-5xl font-extrabold tracking-tight text-foreground">
+            {post.title}
+          </h1>
+          <p className="pt-1 font-medium uppercase tracking-wide text-gray7">
+            {post.description}
+          </p>
+        </div>
+        <div className="pt-16">
           <Mdx code={post.body} />
-        </Container>
+        </div>
       </div>
     </div>
   )

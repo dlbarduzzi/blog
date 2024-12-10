@@ -57,12 +57,22 @@ export default {
               fontSize: theme("fontSize.2xl"),
               fontWeight: theme("fontWeight.normal"),
               letterSpacing: theme("letterSpacing.tight"),
-              marginTop: theme("margin.0"),
+              marginTop: theme("margin.14"),
               marginBottom: theme("margin.5"),
             },
             p: {
               color: theme("colors.foregorund"),
               fontSize: theme("fontSize.lg"),
+            },
+            a: {
+              textUnderlineOffset: theme("textUnderlineOffset.2"),
+              textDecorationColor: theme("colors.gray6"),
+              textDecorationThickness: theme("textDecorationThickness.2"),
+              fontWeight: theme("fontWeight.extrabold"),
+              "&:hover": {
+                color: theme("colors.red"),
+                textDecorationColor: theme("colors.red"),
+              },
             },
             strong: {
               fontWeight: theme("fontWeight.extrabold"),
