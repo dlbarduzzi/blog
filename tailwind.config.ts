@@ -49,37 +49,6 @@ export default {
         "collapsible-up": "collapsible-up 0.2s ease-out",
         "soft-spin": "soft-spin 1s ease-in-out infinite",
       },
-      typography: (theme: (path: string) => string) => ({
-        DEFAULT: {
-          css: {
-            h2: {
-              color: theme("colors.red"),
-              fontSize: theme("fontSize.2xl"),
-              fontWeight: theme("fontWeight.normal"),
-              letterSpacing: theme("letterSpacing.tight"),
-              marginTop: theme("margin.14"),
-              marginBottom: theme("margin.5"),
-            },
-            p: {
-              color: theme("colors.foregorund"),
-              fontSize: theme("fontSize.lg"),
-            },
-            a: {
-              textUnderlineOffset: theme("textUnderlineOffset.2"),
-              textDecorationColor: theme("colors.gray6"),
-              textDecorationThickness: theme("textDecorationThickness.2"),
-              fontWeight: theme("fontWeight.extrabold"),
-              "&:hover": {
-                color: theme("colors.red"),
-                textDecorationColor: theme("colors.red"),
-              },
-            },
-            strong: {
-              fontWeight: theme("fontWeight.extrabold"),
-            },
-          },
-        },
-      }),
     },
   },
   plugins: [tailwindcssForms, tailwindcssAnimate, tailwindTypography],
