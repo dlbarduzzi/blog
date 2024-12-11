@@ -2,6 +2,7 @@ import Link from "next/link"
 
 import { Logo } from "@/components/logo"
 import { Container } from "@/components/container"
+import { ToggleTheme } from "./toggle-theme"
 
 import { cn } from "@/lib/utils"
 
@@ -22,7 +23,11 @@ export function Header() {
               <span className="sr-only">Link to homepage.</span>
             </Link>
           </div>
-          <div>Right</div>
+          <div className="flex items-center gap-x-4">
+            <div>
+              <ToggleTheme />
+            </div>
+          </div>
         </div>
       </Container>
     </header>
