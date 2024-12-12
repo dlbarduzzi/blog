@@ -11,24 +11,16 @@ export default {
       sans: ["var(--font-geist-sans)"],
       mono: ["var(--font-geist-mono)"],
     },
-    colors: {
-      background: "var(--background)",
-      foreground: "var(--foreground)",
-      dark1: "var(--dark1)",
-      dark2: "var(--dark2)",
-      accent1: "var(--accent1)",
-      accent2: "var(--accent2)",
-      accent3: "var(--accent3)",
-      accent4: "var(--accent4)",
-      accent5: "var(--accent5)",
-      accent6: "var(--accent6)",
-      dimmed1: "var(--dimmed1)",
-      dimmed2: "var(--dimmed2)",
-      dimmed3: "var(--dimmed3)",
-      dimmed4: "var(--dimmed4)",
-      dimmed5: "var(--dimmed5)",
-    },
     extend: {
+      colors: {
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        border: "hsl(var(--border))",
+        ring: "hsl(var(--ring))",
+        outline: "hsl(var(--outline))",
+        "dimmed-1": "hsl(var(--dimmed-1))",
+        "dimmed-2": "hsl(var(--dimmed-2))",
+      },
       keyframes: {
         "collapsible-down": {
           from: { height: "0" },

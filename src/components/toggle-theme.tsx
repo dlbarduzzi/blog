@@ -1,7 +1,7 @@
 "use client"
 
 import { useTheme } from "next-themes"
-import { SunIcon, MoonIcon } from "lucide-react"
+import { SunIcon, MoonIcon, MonitorCogIcon } from "lucide-react"
 
 import {
   DropdownMenu,
@@ -13,9 +13,9 @@ import {
 import { cn } from "@/lib/utils"
 
 const themes = [
-  { label: "Light", value: "light" },
-  { label: "Dark", value: "dark" },
-  { label: "System", value: "system" },
+  { label: "Light", value: "light", icon: SunIcon },
+  { label: "Dark", value: "dark", icon: MoonIcon },
+  { label: "System", value: "system", icon: MonitorCogIcon },
 ]
 
 export function ToggleTheme() {
@@ -26,11 +26,10 @@ export function ToggleTheme() {
         <button
           type="button"
           className={cn(
-            "flex h-10 w-10 items-center justify-center rounded-full bg-dark1",
-            "text-foreground transition-colors hover:bg-dark2",
+            "flex size-10 items-center justify-center rounded-full bg-dimmed-1",
+            "text-foreground transition-colors hover:bg-dimmed-2",
             "focus-visible:outline focus-visible:outline-2",
-            "focus-visible:outline-offset-2 focus-visible:outline-foreground",
-            "dark:bg-dimmed5 dark:hover:bg-dimmed5"
+            "focus-visible:outline-offset-2 focus-visible:outline-outline"
           )}
         >
           <SunIcon className="size-5 scale-100 dark:scale-0" />
@@ -39,8 +38,9 @@ export function ToggleTheme() {
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" sideOffset={5}>
-        {themes.map(({ label, value }) => (
+        {themes.map(({ label, value, icon: Icon }) => (
           <DropdownMenuItem key={value} onClick={() => setTheme(value)}>
+            <Icon className="size-4" />
             {label}
           </DropdownMenuItem>
         ))}

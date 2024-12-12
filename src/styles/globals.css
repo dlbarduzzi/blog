@@ -4,39 +4,23 @@
 
 @layer base {
   :root {
-    --background: #faf4f2;
-    --foreground: #29242a;
-    --dark1: #ede7e5;
-    --dark2: #d3cdcc;
-    --accent1: #e14775;
-    --accent2: #e16032;
-    --accent3: #cc7a0a;
-    --accent4: #269d69;
-    --accent5: #1c8ca8;
-    --accent6: #7058be;
-    --dimmed1: #706b6e;
-    --dimmed2: #918c8e;
-    --dimmed3: #a59fa0;
-    --dimmed4: #bfb9ba;
-    --dimmed5: #d3cdcc;
+    --background: 15 44.44% 96.47%;
+    --foreground: 290 7.69% 15.29%;
+    --border: 15 18.18% 91.37%;
+    --ring: 11.8 14.5% 86.37%;
+    --outline: 0 0% 0%;
+    --dimmed-1: 15 18.18% 91.37%;
+    --dimmed-2: 11.8 14.5% 86.37%;
   }
 
   .dark {
-    --background: #273136;
-    --foreground: #f2fffc;
-    --dark1: #1d2528;
-    --dark2: #161b1e;
-    --accent1: #ff6d7e;
-    --accent2: #ffb270;
-    --accent3: #ffed72;
-    --accent4: #a2e57b;
-    --accent5: #7cd5f1;
-    --accent6: #baa0f8;
-    --dimmed1: #b8c4c3;
-    --dimmed2: #8b9798;
-    --dimmed3: #6b7678;
-    --dimmed4: #545f62;
-    --dimmed5: #3a4449;
+    --background: 200 16.13% 18.24%;
+    --foreground: 166.15 100% 97.45%;
+    --border: 200 11.45% 25.69%;
+    --ring: 196.4 9.6% 30.69%;
+    --outline: 0 0% 100%;
+    --dimmed-1: 200 11.45% 25.69%;
+    --dimmed-2: 196.4 9.6% 30.69%;
   }
 
   [type="text"],
