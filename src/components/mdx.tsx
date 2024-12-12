@@ -6,7 +6,15 @@ import { MDXContent } from "@content-collections/mdx/react"
 import { cn } from "@/lib/utils"
 
 const h2 = ({ ...props }: HTMLProps<HTMLHeadingElement>) => {
-  return <h2 className={cn("")} {...props} />
+  return (
+    <h2
+      className={cn(
+        "mb-5 mt-14 text-lg font-normal tracking-tight text-heading",
+        "first:mt-0 md:text-xl"
+      )}
+      {...props}
+    />
+  )
 }
 
 const a = ({ href, ...props }: HTMLProps<HTMLAnchorElement>) => {
@@ -14,7 +22,10 @@ const a = ({ href, ...props }: HTMLProps<HTMLAnchorElement>) => {
     throw new TypeError("href is required")
   }
 
-  const className = cn("")
+  const className = cn(
+    "font-extrabold text-foreground underline decoration-dimmed-3 decoration-2",
+    "underline-offset-2 hover:text-heading hover:decoration-heading"
+  )
 
   if (href.startsWith("/")) {
     return <Link href={href} className={className} {...props} />
@@ -32,11 +43,16 @@ const a = ({ href, ...props }: HTMLProps<HTMLAnchorElement>) => {
 }
 
 const p = ({ ...props }: HTMLProps<HTMLParagraphElement>) => {
-  return <p className="" {...props} />
+  return (
+    <p
+      className="text-sm leading-6 text-foreground md:text-base md:leading-7"
+      {...props}
+    />
+  )
 }
 
 const strong = ({ ...props }: HTMLProps<HTMLElement>) => {
-  return <strong className="" {...props} />
+  return <strong className="font-extrabold text-foreground" {...props} />
 }
 
 export function Mdx({ code, components }: ComponentProps<typeof MDXContent>) {

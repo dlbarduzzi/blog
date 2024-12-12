@@ -2,6 +2,7 @@ import type { Config } from "tailwindcss"
 
 import tailwindcssForms from "@tailwindcss/forms"
 import tailwindcssAnimate from "tailwindcss-animate"
+import tailwindTypography from "@tailwindcss/typography"
 
 export default {
   content: ["./src/**/*.{ts,tsx,mdx}"],
@@ -20,6 +21,8 @@ export default {
         outline: "hsl(var(--outline))",
         "dimmed-1": "hsl(var(--dimmed-1))",
         "dimmed-2": "hsl(var(--dimmed-2))",
+        "dimmed-3": "hsl(var(--dimmed-3))",
+        heading: "hsl(var(--heading))",
       },
       keyframes: {
         "collapsible-down": {
@@ -42,5 +45,5 @@ export default {
       },
     },
   },
-  plugins: [tailwindcssForms, tailwindcssAnimate],
+  plugins: [tailwindcssForms, tailwindcssAnimate, tailwindTypography],
 } satisfies Config

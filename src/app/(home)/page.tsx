@@ -14,14 +14,23 @@ export default function Page() {
               href={`/blog/${post._meta.path}`}
               className="block rounded-md border border-border px-4 py-3"
             >
-              <p className="text-xs">
-                {new Date(post.date).toLocaleDateString("en-us", {
-                  month: "long",
-                  day: "numeric",
-                  year: "numeric",
-                })}
-              </p>
-              <h3 className="pt-1 font-bold">{post.title}</h3>
+              <article>
+                <dl>
+                  <dt className="sr-only">Date</dt>
+                  <dd className="text-xs text-foreground">
+                    <time dateTime={new Date(post.date).toLocaleDateString()}>
+                      {new Date(post.date).toLocaleDateString("en-us", {
+                        month: "long",
+                        day: "numeric",
+                        year: "numeric",
+                      })}
+                    </time>
+                  </dd>
+                </dl>
+                <h3 className="pt-1 text-base font-bold text-foreground">
+                  {post.title}
+                </h3>
+              </article>
             </Link>
           ))}
         </div>
