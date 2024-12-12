@@ -5,6 +5,7 @@ import localFont from "next/font/local"
 
 import { cn } from "@/lib/utils"
 import { siteConfig } from "@/lib/site"
+import { ThemeProvider } from "@/providers/theme"
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -54,7 +55,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           geistMono.variable
         )}
       >
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   )
