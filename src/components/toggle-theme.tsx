@@ -19,17 +19,18 @@ const themes = [
 ]
 
 export function ToggleTheme() {
-  const { theme, setTheme } = useTheme()
+  const { setTheme } = useTheme()
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <button
           type="button"
           className={cn(
-            "flex h-10 w-10 items-center justify-center rounded-full bg-gray-100",
-            "text-gray-700 transition-colors hover:bg-gray-200 hover:text-gray-900",
+            "flex h-10 w-10 items-center justify-center rounded-full bg-dark1",
+            "text-foreground transition-colors hover:bg-dark2",
             "focus-visible:outline focus-visible:outline-2",
-            "focus-visible:outline-offset-2 focus-visible:outline-black"
+            "focus-visible:outline-offset-2 focus-visible:outline-foreground",
+            "dark:bg-dimmed5 dark:hover:bg-dimmed5"
           )}
         >
           <SunIcon className="size-5 scale-100 dark:scale-0" />
@@ -37,7 +38,7 @@ export function ToggleTheme() {
           <span className="sr-only">Toggle theme</span>
         </button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" sideOffset={2}>
+      <DropdownMenuContent align="end" sideOffset={5}>
         {themes.map(({ label, value }) => (
           <DropdownMenuItem key={value} onClick={() => setTheme(value)}>
             {label}

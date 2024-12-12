@@ -17,8 +17,8 @@ const DropdownMenuContent = React.forwardRef<
       ref={ref}
       sideOffset={sideOffset}
       className={cn(
-        "z-50 min-w-[8rem] overflow-hidden rounded-md bg-white ring-1 ring-black/5",
-        "py-1 text-black shadow-lg",
+        "z-50 min-w-[8rem] overflow-hidden rounded-md bg-background",
+        "py-1 text-foreground shadow-lg ring-1 ring-dimmed5",
         "data-[state=open]:animate-in",
         "data-[state=closed]:animate-out",
         "data-[state=closed]:fade-out-0",
@@ -47,9 +47,10 @@ const DropdownMenuItem = React.forwardRef<
   <RadixDropdownMenu.Item
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center gap-2 rounded-sm",
-      "px-3 py-1.5 text-sm text-gray-700 outline-none transition-colors",
-      "focus:bg-gray-100 focus:text-gray-900 data-[disabled]:pointer-events-none",
+      "relative flex cursor-default select-none items-center gap-2 rounded-none",
+      "px-3 py-1.5 text-sm text-foreground outline-none transition-colors",
+      "focus:bg-dark1 focus:text-foreground data-[disabled]:pointer-events-none",
+      "dark:focus:bg-dimmed5",
       inset && "pl-8",
       className
     )}
