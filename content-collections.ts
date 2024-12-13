@@ -7,7 +7,10 @@ import { compileMDX } from "@content-collections/mdx"
 import { remarkGfm, remarkHeading } from "fumadocs-core/mdx-plugins"
 
 const rehypePrettyCodeOptions: RehypePrettyCodeOptions = {
-  theme: "material-theme",
+  theme: {
+    dark: "catppuccin-mocha",
+    light: "catppuccin-latte",
+  },
 }
 
 const posts = defineCollection({
