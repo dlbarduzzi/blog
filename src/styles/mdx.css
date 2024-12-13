@@ -1,51 +1,34 @@
-.shiki {
-  background-color: #fefaf9;
-  color: var(--shiki-light);
-  @apply my-12 border-2 border-border font-caskaydia;
+figure[data-rehype-pretty-code-figure] {
+  @apply border-2 border-border font-caskaydia rounded-md bg-[#fefaf9] dark:bg-[#1d2528] overflow-hidden my-12;
 }
 
-.dark .shiki {
-  background-color: #1d2528;
-  color: var(--shiki-dark);
+figure[data-rehype-pretty-code-figure] pre {
+  @apply rounded-none p-0 m-0 bg-[#fefaf9] dark:bg-[#1d2528] overflow-x-auto font-caskaydia leading-6 text-[14px] md:text-[15px];
 }
 
-/*
-.shiki {
-  background-color: var(--shiki-light-bg);
-  color: var(--shiki-light);
-  @apply border-border;
-}
-*/
-
-.shiki span {
-  color: var(--shiki-light);
+figure[data-rehype-pretty-code-figure] code {
+  @apply rounded-none px-0 py-2.5 m-0 bg-[#fefaf9] dark:bg-[#1d2528];
 }
 
-/*
-.dark .shiki {
-  background-color: var(--shiki-dark-bg);
-  color: var(--shiki-dark);
-}
-*/
-
-.dark .shiki span {
-  color: var(--shiki-dark);
+figcaption[data-rehype-pretty-code-title] {
+  @apply p-0 m-0 border-b border-b-border px-4 py-3 italic text-sm text-gray-400 dark:text-gray-500;
 }
 
-.shiki code {
-  display: grid;
-  font-size: 13px;
-  counter-reset: line;
+figure[data-rehype-pretty-code-figure] code[data-line-numbers] {
+  counter-reset: lineNumber;
+}
+ 
+figure[data-rehype-pretty-code-figure] code[data-line-numbers] span[data-line]::before {
+  counter-increment: lineNumber;
+  content: counter(lineNumber);
+  @apply inline-block text-right text-gray-400 dark:text-gray-500 pr-3;
 }
 
-.shiki .line:before {
-  content: counter(line);
-  counter-increment: line;
-
-  @apply mr-8 inline-block w-4 text-right text-gray-300 dark:text-gray-700;
+figure[data-rehype-pretty-code-figure] span[data-line] {
+  @apply border-l-4 border-l-transparent px-3;
 }
 
-.shiki[title]:before {
-  content: attr(title);
-  @apply mb-6 inline-block text-right text-sm text-gray-300 dark:text-gray-700;
+figure[data-rehype-pretty-code-figure] span[data-highlighted-line] {
+  border-left-color: rgb(162 229 123 / 0.7);
+  background-color: rgb(162 229 123 / 0.1);
 }
