@@ -1,5 +1,15 @@
-import { defineCollection, defineConfig } from "@content-collections/core"
+import type { RehypeCodeOptions } from "fumadocs-core/mdx-plugins"
+
 import { compileMDX } from "@content-collections/mdx"
+import { defineCollection, defineConfig } from "@content-collections/core"
+import { rehypeCode, remarkGfm, remarkHeading } from "fumadocs-core/mdx-plugins"
+
+const rehypeCodeOptions: RehypeCodeOptions = {
+  themes: {
+    light: "min-light",
+    dark: "material-theme",
+  },
+}
 
 const posts = defineCollection({
   name: "posts",
@@ -12,7 +22,10 @@ const posts = defineCollection({
   }),
   transform: async (page, context) => {
     const body = await context.cache(page.content, async () =>
-      compileMDX(context, page, {})
+      compileMDX(context, page, {
+        remarkPlugins: [remarkGfm, remarkHeading],
+        rehypePlugins: [[rehypeCode, rehypeCodeOptions]],
+      })
     )
     return {
       ...page,

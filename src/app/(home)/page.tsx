@@ -18,7 +18,7 @@ export default function Page() {
                 <dl>
                   <dt className="sr-only">Date</dt>
                   <dd className="text-xs text-foreground">
-                    <time dateTime={new Date(post.date).toLocaleDateString()}>
+                    <time dateTime={post.date.toISOString()}>
                       {new Date(post.date).toLocaleDateString("en-us", {
                         month: "long",
                         day: "numeric",

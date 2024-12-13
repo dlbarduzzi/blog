@@ -1,0 +1,51 @@
+.shiki {
+  background-color: #fefaf9;
+  color: var(--shiki-light);
+  @apply my-12 border-2 border-border font-caskaydia;
+}
+
+.dark .shiki {
+  background-color: #1d2528;
+  color: var(--shiki-dark);
+}
+
+/*
+.shiki {
+  background-color: var(--shiki-light-bg);
+  color: var(--shiki-light);
+  @apply border-border;
+}
+*/
+
+.shiki span {
+  color: var(--shiki-light);
+}
+
+/*
+.dark .shiki {
+  background-color: var(--shiki-dark-bg);
+  color: var(--shiki-dark);
+}
+*/
+
+.dark .shiki span {
+  color: var(--shiki-dark);
+}
+
+.shiki code {
+  display: grid;
+  font-size: 13px;
+  counter-reset: line;
+}
+
+.shiki .line:before {
+  content: counter(line);
+  counter-increment: line;
+
+  @apply mr-8 inline-block w-4 text-right text-gray-300 dark:text-gray-700;
+}
+
+.shiki[title]:before {
+  content: attr(title);
+  @apply mb-6 inline-block text-right text-sm text-gray-300 dark:text-gray-700;
+}
