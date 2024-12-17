@@ -1,8 +1,8 @@
 import type { Config } from "tailwindcss"
 
 import tailwindcssForms from "@tailwindcss/forms"
-import tailwindTypography from "@tailwindcss/typography"
 import tailwindcssAnimate from "tailwindcss-animate"
+import tailwindTypography from "@tailwindcss/typography"
 
 export default {
   content: ["./src/**/*.{ts,tsx,mdx}"],

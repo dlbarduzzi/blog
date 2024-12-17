@@ -1,5 +1,5 @@
-import { FlatCompat } from "@eslint/eslintrc"
 import { dirname } from "path"
+import { FlatCompat } from "@eslint/eslintrc"
 import { fileURLToPath } from "url"
 
 const __filename = fileURLToPath(import.meta.url)

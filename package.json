@@ -11,6 +11,7 @@
     "format:check": "prettier src/ --check"
   },
   "dependencies": {
+    "@content-collections/mdx": "^0.2.0",
     "@t3-oss/env-nextjs": "^0.11.1",
     "@tailwindcss/forms": "^0.5.9",
     "@tailwindcss/typography": "^0.5.15",
@@ -24,6 +25,8 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@content-collections/core": "^0.7.3",
+    "@content-collections/next": "^0.2.4",
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",

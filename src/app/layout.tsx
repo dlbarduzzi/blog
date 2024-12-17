@@ -4,8 +4,9 @@ import "@/styles/globals.css"
 import localFont from "next/font/local"
 
 import { ScreenSize } from "@/components/screen-size"
-import { siteConfig } from "@/lib/site"
+
 import { cn } from "@/lib/utils"
+import { siteConfig } from "@/lib/site"
 
 const rubikSans = localFont({
   src: [
