@@ -7,8 +7,8 @@ export function ScreenSize() {
   return (
     <div
       className={cn(
-        "fixed bottom-1 left-1 z-50 flex h-6 w-6 items-center justify-center",
-        "rounded-full bg-black p-3 font-mono text-xs text-white"
+        "fixed bottom-1 left-1 z-50 flex h-6 w-6 items-center",
+        "justify-center rounded-full bg-black p-3 text-xs text-white"
       )}
     >
       <div className="block sm:hidden">xs</div>
