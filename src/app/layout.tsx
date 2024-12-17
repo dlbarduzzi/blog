@@ -12,7 +12,7 @@ const rubikSans = localFont({
     {
       path: "../fonts/Rubik.ttf",
       weight: "100 900",
-      style: "regular",
+      style: "normal",
     },
     {
       path: "../fonts/RubikItalic.ttf",
@@ -25,7 +25,7 @@ const rubikSans = localFont({
 
 const caskaydiaCode = localFont({
   src: "../fonts/Caskaydia.ttf",
-  variable: "--font-caskaydia-mono",
+  variable: "--font-code",
   weight: "100 900",
 })
 

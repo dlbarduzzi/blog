@@ -10,7 +10,7 @@ export default {
   theme: {
     fontFamily: {
       sans: ["var(--font-sans)"],
-      code: ["var(--font-caskaydia-mono)"],
+      code: ["var(--font-code)"],
     },
     extend: {
       keyframes: {
