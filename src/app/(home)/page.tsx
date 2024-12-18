@@ -15,12 +15,15 @@ export default function Page() {
             <Link
               key={post.title}
               href={`/blog/${post._meta.path}`}
-              className="group block rounded-md bg-gray-50 px-6 py-5 shadow-md"
+              className={cn(
+                "block rounded-md border border-border bg-background",
+                "px-6 py-5 shadow-md hover:border-accent"
+              )}
             >
               <article>
                 <dl>
                   <dt className="sr-only">Date</dt>
-                  <dd className="text-sm text-gray-500">
+                  <dd className="text-sm text-muted">
                     <time dateTime={post.date.toISOString()}>
                       {new Date(post.date).toLocaleDateString("en-us", {
                         month: "long",
@@ -32,8 +35,7 @@ export default function Page() {
                 </dl>
                 <h3
                   className={cn(
-                    "pt-5 font-heading text-lg text-foreground group-hover:text-accent",
-                    "font-black tracking-tight transition-colors"
+                    "pt-5 font-heading text-lg font-black tracking-tight text-accent"
                   )}
                 >
                   {post.title}

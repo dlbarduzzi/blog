@@ -17,27 +17,14 @@ const h2 = ({ ...props }: HTMLProps<HTMLHeadingElement>) => {
   )
 }
 
-const h3 = ({ ...props }: HTMLProps<HTMLHeadingElement>) => {
-  return (
-    <h3
-      className={cn(
-        "mb-6 mt-10 font-heading text-lg font-black tracking-tight text-accent",
-        "first:mt-0 md:text-xl"
-      )}
-      {...props}
-    />
-  )
-}
-
 const a = ({ href, ...props }: HTMLProps<HTMLAnchorElement>) => {
   if (typeof href !== "string") {
     throw new TypeError("href is required")
   }
 
   const className = cn(
-    "text-foreground hover:text-accent hover:decoration-accent font-extrabold",
-    "underline decoration-gray-300 decoration-2 underline-offset-2",
-    "transition-colors"
+    "decoration-underline font-extrabold text-foreground underline decoration-2",
+    "underline-offset-2 transition-colors hover:text-accent hover:decoration-accent"
   )
 
   if (href.startsWith("/")) {
@@ -68,7 +55,7 @@ const strong = ({ ...props }: HTMLProps<HTMLElement>) => {
 export function Mdx({ code, components }: ComponentProps<typeof MDXContent>) {
   return (
     <div className="prose max-w-none">
-      <MDXContent code={code} components={{ h2, h3, a, p, strong, ...components }} />
+      <MDXContent code={code} components={{ h2, a, p, strong, ...components }} />
     </div>
   )
 }

@@ -16,8 +16,18 @@ export default {
     extend: {
       colors: {
         background: "hsl(var(--background))",
+        "background-hover": "hsl(var(--background-hover))",
         foreground: "hsl(var(--foreground))",
+        muted: "hsl(var(--muted))",
         accent: "hsl(var(--accent))",
+        border: "hsl(var(--border))",
+        outline: "hsl(var(--outline))",
+        underline: "hsl(var(--underline))",
+        "popover-background": "hsl(var(--popover-background))",
+        "popover-foreground": "hsl(var(--popover-foreground))",
+        "popover-background-focus": "hsl(var(--popover-background-focus))",
+        "popover-foreground-focus": "hsl(var(--popover-foreground-focus))",
+        "popover-ring": "hsl(var(--popover-ring))",
       },
       keyframes: {
         "collapsible-down": {

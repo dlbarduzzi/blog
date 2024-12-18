@@ -29,14 +29,14 @@ export default async function Page({ params }: Params) {
         <article>
           <div
             className={cn(
-              "sm:border sm:border-gray-200 sm:px-8 sm:py-6 md:px-14 md:py-11 lg:px-20",
-              "lg:py-14"
+              "sm:border-border sm:border sm:px-8 sm:py-6 md:px-14 md:py-11",
+              "lg:px-20 lg:py-14"
             )}
           >
-            <div className="text-center">
+            <div className="text-left sm:text-center">
               <dl>
                 <dt className="sr-only">Date</dt>
-                <dd className="text-sm text-gray-500">
+                <dd className="text-sm text-muted">
                   <time dateTime={post.date.toISOString()}>
                     {new Date(post.date).toLocaleDateString("en-us", {
                       month: "long",

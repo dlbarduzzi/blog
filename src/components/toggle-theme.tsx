@@ -26,10 +26,10 @@ export function ToggleTheme() {
         <button
           type="button"
           className={cn(
-            "flex size-9 items-center justify-center rounded-md bg-gray-100",
-            "text-foreground transition-colors hover:bg-gray-200",
-            "focus-visible:outline focus-visible:outline-2",
-            "focus-visible:outline-offset-2 focus-visible:outline-black"
+            "hover:bg-background-hover flex size-9 items-center justify-center",
+            "rounded-md text-foreground transition-colors focus-visible:outline",
+            "focus-visible:outline-2 focus-visible:outline-offset-2",
+            "focus-visible:outline-outline"
           )}
         >
           <SunIcon className="size-5 scale-100 dark:scale-0" />
