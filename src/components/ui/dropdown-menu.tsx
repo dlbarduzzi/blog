@@ -19,6 +19,7 @@ const DropdownMenuContent = React.forwardRef<
       className={cn(
         "z-50 min-w-[8rem] overflow-hidden rounded-md bg-white py-1",
         "text-gray-700 shadow-lg ring-1 ring-gray-200",
+        "dark:bg-neutral-800 dark:text-neutral-300 dark:ring-neutral-700",
         "data-[state=open]:animate-in",
         "data-[state=closed]:animate-out",
         "data-[state=closed]:fade-out-0",
@@ -51,6 +52,7 @@ const DropdownMenuItem = React.forwardRef<
       "relative flex cursor-default focus:text-black",
       "select-none items-center gap-2 rounded-none px-3 py-1.5 text-sm",
       "outline-none transition-colors data-[disabled]:pointer-events-none",
+      "dark:text-neutral-300 dark:focus:bg-neutral-600 dark:focus:text-neutral-200",
       inset && "pl-8",
       className
     )}

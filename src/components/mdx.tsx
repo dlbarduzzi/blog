@@ -10,7 +10,8 @@ const h2 = ({ ...props }: HTMLProps<HTMLHeadingElement>) => {
     <h2
       className={cn(
         "mb-6 mt-10 font-heading text-xl font-black tracking-tight text-rose-500",
-        "first:mt-0 md:text-2xl"
+        "first:mt-0 md:text-2xl",
+        "dark:text-yellow-300"
       )}
       {...props}
     />
@@ -25,7 +26,9 @@ const a = ({ href, ...props }: HTMLProps<HTMLAnchorElement>) => {
   const className = cn(
     "font-bold text-black underline decoration-gray-400 decoration-2",
     "underline-offset-2 transition-colors hover:text-rose-500",
-    "hover:decoration-rose-400"
+    "hover:decoration-rose-400",
+    "dark:text-neutral-100 dark:decoration-neutral-500",
+    "dark:hover:text-yellow-300 dark:hover:decoration-yellow-300"
   )
 
   if (href.startsWith("/")) {
@@ -44,11 +47,19 @@ const a = ({ href, ...props }: HTMLProps<HTMLAnchorElement>) => {
 }
 
 const p = ({ ...props }: HTMLProps<HTMLParagraphElement>) => {
-  return <p className={cn("text-base font-normal leading-7 text-black")} {...props} />
+  return (
+    <p
+      className={cn(
+        "text-base font-normal leading-7 text-black",
+        "dark:text-neutral-200"
+      )}
+      {...props}
+    />
+  )
 }
 
 const strong = ({ ...props }: HTMLProps<HTMLElement>) => {
-  return <strong className="font-bold text-black" {...props} />
+  return <strong className="font-bold text-black dark:text-neutral-100" {...props} />
 }
 
 export function Mdx({ code, components }: ComponentProps<typeof MDXContent>) {

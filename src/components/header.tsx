@@ -8,7 +8,12 @@ import { cn } from "@/lib/utils"
 
 export function Header() {
   return (
-    <header className="border-b border-b-gray-200 bg-white">
+    <header
+      className={cn(
+        "border-b border-b-gray-200 bg-white",
+        "dark:border-b-neutral-700 dark:bg-neutral-800"
+      )}
+    >
       <Container>
         <div className="flex h-14 items-center justify-between gap-x-4">
           <div className="flex items-center">
@@ -16,7 +21,8 @@ export function Header() {
               href="/"
               className={cn(
                 "rounded focus-visible:outline focus-visible:outline-2",
-                "focus-visible:outline-offset-2 focus-visible:outline-black"
+                "focus-visible:outline-offset-2 focus-visible:outline-black",
+                "dark:focus-visible:outline-neutral-200"
               )}
             >
               <Logo />

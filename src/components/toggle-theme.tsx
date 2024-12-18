@@ -29,7 +29,10 @@ export function ToggleTheme() {
             "flex size-9 items-center justify-center rounded-md bg-gray-100",
             "text-gray-700 transition-colors hover:bg-gray-200 hover:text-black",
             "focus-visible:outline focus-visible:outline-2",
-            "focus-visible:outline-offset-2 focus-visible:outline-black"
+            "focus-visible:outline-offset-2 focus-visible:outline-black",
+            "dark:bg-neutral-700 dark:text-neutral-400",
+            "dark:hover:bg-neutral-600 dark:hover:text-neutral-200",
+            "dark:focus-visible:outline-neutral-200"
           )}
         >
           <SunIcon className="size-5 scale-100 dark:scale-0" />
@@ -46,7 +49,8 @@ export function ToggleTheme() {
           >
             <Icon
               className={cn(
-                "size-4 text-gray-500 transition-colors group-hover:text-gray-700"
+                "size-4 text-gray-500 transition-colors group-hover:text-gray-700",
+                "dark:text-neutral-400 dark:group-hover:text-neutral-300"
               )}
             />
             {label}

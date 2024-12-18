@@ -80,6 +80,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className={cn(
           "min-h-screen bg-white font-sans text-base text-black antialiased",
           "selection:bg-yellow-200 selection:text-black",
+          "dark:bg-neutral-800 dark:text-neutral-200",
+          "dark:selection:bg-emerald-600 dark:selection:text-white",
           rubikSans.variable,
           nunitoSans.variable,
           caskaydiaCode.variable

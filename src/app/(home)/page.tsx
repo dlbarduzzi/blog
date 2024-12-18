@@ -17,13 +17,15 @@ export default function Page() {
               href={`/blog/${post._meta.path}`}
               className={cn(
                 "block rounded-md border border-gray-200 bg-white",
-                "px-6 py-5 hover:border-gray-300"
+                "px-6 py-5 hover:border-gray-300",
+                "dark:border-neutral-700 dark:bg-neutral-800",
+                "dark:hover:border-neutral-600"
               )}
             >
               <article>
                 <dl>
                   <dt className="sr-only">Date</dt>
-                  <dd className="text-sm text-gray-500">
+                  <dd className="text-sm text-gray-500 dark:text-neutral-400">
                     <time dateTime={post.date.toISOString()}>
                       {new Date(post.date).toLocaleDateString("en-us", {
                         month: "long",
@@ -35,12 +37,15 @@ export default function Page() {
                 </dl>
                 <h3
                   className={cn(
-                    "pt-5 font-heading text-lg font-black tracking-tight text-black"
+                    "pt-5 font-heading text-lg font-black tracking-tight text-black",
+                    "dark:text-neutral-200"
                   )}
                 >
                   {post.title}
                 </h3>
-                <p className="leading-7 text-black">{post.subtitle}</p>
+                <p className="leading-7 text-black dark:text-neutral-200">
+                  {post.subtitle}
+                </p>
               </article>
             </Link>
           ))}
