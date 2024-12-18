@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next"
 
 import "@/styles/globals.css"
+import "@/styles/mdx.css"
+
 import localFont from "next/font/local"
 
 import { ScreenSize } from "@/components/screen-size"
@@ -80,7 +82,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className={cn(
           "min-h-screen bg-white font-sans text-base text-black antialiased",
           "selection:bg-yellow-200 selection:text-black",
-          "dark:bg-neutral-800 dark:text-neutral-200",
+          "dark:bg-neutral-900 dark:text-neutral-200",
           "dark:selection:bg-emerald-600 dark:selection:text-white",
           rubikSans.variable,
           nunitoSans.variable,

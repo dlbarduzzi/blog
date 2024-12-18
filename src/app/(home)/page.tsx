@@ -18,7 +18,7 @@ export default function Page() {
               className={cn(
                 "block rounded-md border border-gray-200 bg-white",
                 "px-6 py-5 hover:border-gray-300",
-                "dark:border-neutral-700 dark:bg-neutral-800",
+                "dark:border-neutral-700 dark:bg-neutral-900",
                 "dark:hover:border-neutral-600"
               )}
             >

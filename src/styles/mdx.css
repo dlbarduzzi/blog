@@ -1,0 +1,49 @@
+figure[data-rehype-pretty-code-figure] {
+  @apply my-12 overflow-hidden rounded-md border-2 border-gray-200 bg-gray-50 font-code dark:border-neutral-700 dark:bg-neutral-800;
+}
+
+figure[data-rehype-pretty-code-figure] pre {
+  @apply m-0 overflow-x-auto rounded-none bg-gray-50 p-0 font-code text-[14px] leading-6 dark:bg-neutral-800 md:text-[15px];
+}
+
+figure[data-rehype-pretty-code-figure] code {
+  @apply m-0 rounded-none bg-gray-50 px-0 py-2.5 dark:bg-neutral-800;
+}
+
+figcaption[data-rehype-pretty-code-title] {
+  @apply m-0 border-b border-b-gray-200 p-0 px-4 py-3 text-sm italic text-gray-400 dark:border-b-neutral-700 dark:text-neutral-500;
+}
+
+figure[data-rehype-pretty-code-figure] code[data-line-numbers] {
+  counter-reset: lineNumber;
+}
+
+figure[data-rehype-pretty-code-figure] code[data-line-numbers] span[data-line]::before {
+  counter-increment: lineNumber;
+  content: counter(lineNumber);
+  @apply inline-block w-8 pr-4 text-right text-gray-400 dark:text-gray-500;
+}
+
+figure[data-rehype-pretty-code-figure] span[data-line] {
+  @apply border-l-4 border-l-transparent px-3;
+}
+
+html.light figure[data-rehype-pretty-code-figure] span[data-highlighted-line] {
+  border-left-color: rgb(38 157 105 / 0.7);
+  background-color: rgb(38 157 105 / 0.1);
+}
+
+html.dark figure[data-rehype-pretty-code-figure] span[data-highlighted-line] {
+  border-left-color: rgb(162 229 123 / 0.7);
+  background-color: rgb(162 229 123 / 0.1);
+}
+
+html.light figure[data-rehype-pretty-code-figure],
+html.light figure[data-rehype-pretty-code-figure] span {
+  color: var(--shiki-light);
+}
+
+html.dark figure[data-rehype-pretty-code-figure],
+html.dark figure[data-rehype-pretty-code-figure] span {
+  color: var(--shiki-dark);
+}

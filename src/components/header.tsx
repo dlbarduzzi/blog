@@ -11,7 +11,7 @@ export function Header() {
     <header
       className={cn(
         "border-b border-b-gray-200 bg-white",
-        "dark:border-b-neutral-700 dark:bg-neutral-800"
+        "dark:border-b-neutral-700 dark:bg-neutral-900"
       )}
     >
       <Container>

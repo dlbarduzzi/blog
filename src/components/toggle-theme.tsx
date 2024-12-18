@@ -30,8 +30,8 @@ export function ToggleTheme() {
             "text-gray-700 transition-colors hover:bg-gray-200 hover:text-black",
             "focus-visible:outline focus-visible:outline-2",
             "focus-visible:outline-offset-2 focus-visible:outline-black",
-            "dark:bg-neutral-700 dark:text-neutral-400",
-            "dark:hover:bg-neutral-600 dark:hover:text-neutral-200",
+            "dark:bg-neutral-800 dark:text-neutral-400",
+            "dark:hover:bg-neutral-800 dark:hover:text-neutral-200",
             "dark:focus-visible:outline-neutral-200"
           )}
         >
