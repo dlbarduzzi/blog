@@ -29,14 +29,14 @@ export default async function Page({ params }: Params) {
         <article>
           <div
             className={cn(
-              "sm:border-border sm:border sm:px-8 sm:py-6 md:px-14 md:py-11",
+              "sm:border sm:border-gray-200 sm:px-8 sm:py-6 md:px-14 md:py-11",
               "lg:px-20 lg:py-14"
             )}
           >
             <div className="text-left sm:text-center">
               <dl>
                 <dt className="sr-only">Date</dt>
-                <dd className="text-sm text-muted">
+                <dd className="text-sm text-gray-500">
                   <time dateTime={post.date.toISOString()}>
                     {new Date(post.date).toLocaleDateString("en-us", {
                       month: "long",
@@ -48,15 +48,15 @@ export default async function Page({ params }: Params) {
               </dl>
               <h1
                 className={cn(
-                  "pt-5 font-heading text-2xl font-black text-foreground",
-                  "tracking-tighter md:text-4xl"
+                  "pt-5 font-heading text-2xl font-black tracking-tighter",
+                  "text-black md:text-4xl"
                 )}
               >
                 {post.title}
               </h1>
               <p
                 className={cn(
-                  "pt-1 text-sm uppercase tracking-wide text-foreground md:text-base"
+                  "pt-1 text-sm uppercase tracking-wide text-black md:text-base"
                 )}
               >
                 {post.subtitle}

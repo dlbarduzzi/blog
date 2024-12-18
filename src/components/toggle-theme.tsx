@@ -26,10 +26,10 @@ export function ToggleTheme() {
         <button
           type="button"
           className={cn(
-            "hover:bg-background-hover flex size-9 items-center justify-center",
-            "rounded-md text-foreground transition-colors focus-visible:outline",
-            "focus-visible:outline-2 focus-visible:outline-offset-2",
-            "focus-visible:outline-outline"
+            "flex size-9 items-center justify-center rounded-md bg-gray-100",
+            "text-gray-700 transition-colors hover:bg-gray-200 hover:text-black",
+            "focus-visible:outline focus-visible:outline-2",
+            "focus-visible:outline-offset-2 focus-visible:outline-black"
           )}
         >
           <SunIcon className="size-5 scale-100 dark:scale-0" />
@@ -39,8 +39,16 @@ export function ToggleTheme() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" sideOffset={5}>
         {themes.map(({ label, value, icon: Icon }) => (
-          <DropdownMenuItem key={value} onClick={() => setTheme(value)}>
-            <Icon className="size-4" />
+          <DropdownMenuItem
+            key={value}
+            onClick={() => setTheme(value)}
+            className="group"
+          >
+            <Icon
+              className={cn(
+                "size-4 text-gray-500 transition-colors group-hover:text-gray-700"
+              )}
+            />
             {label}
           </DropdownMenuItem>
         ))}

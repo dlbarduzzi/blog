@@ -78,7 +78,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head />
       <body
         className={cn(
-          "min-h-screen bg-background font-sans text-base text-black antialiased",
+          "min-h-screen bg-white font-sans text-base text-black antialiased",
           "selection:bg-yellow-200 selection:text-black",
           rubikSans.variable,
           nunitoSans.variable,

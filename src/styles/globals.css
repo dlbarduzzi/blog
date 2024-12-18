@@ -3,44 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 15 44% 96%;
-    --background-hover: 15 18% 91%;
-
-    --foreground: 290 8% 15%;
-
-    --muted: 324 2% 43%;
-    --accent: 342 72% 58%;
-    --border: 9 7% 81%;
-    --outline: 290 8% 15%;
-    --underline: 350 3% 64%;
-
-    --popover-background: 15 44% 96%;
-    --popover-foreground: 290 8% 25%;
-    --popover-background-focus: 15 18% 91%;
-    --popover-foreground-focus: 290 8% 15%;
-    --popover-ring: 9 7% 86%;
-  }
-
-  .dark {
-    --background: 200 16% 18%;
-    --background-hover: 200 11% 26%;
-
-    --foreground: 166 100% 97%;
-
-    --muted: 175 9% 75%;
-    --accent: 52 100% 72%;
-    --border: 193 8% 36%;
-    --outline: 166 100% 97%;
-    --underline: 185 6% 57%;
-
-    --popover-background: 200 16% 18%;
-    --popover-foreground: 175 21% 86%;
-    --popover-background-focus: 200 11% 26%;
-    --popover-foreground-focus: 166 100% 97%;
-    --popover-ring: 193 8% 28%;
-  }
-
   [type="text"],
   [type="password"],
   [type="email"],
