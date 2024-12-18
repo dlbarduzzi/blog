@@ -4,6 +4,7 @@ import "@/styles/globals.css"
 import localFont from "next/font/local"
 
 import { ScreenSize } from "@/components/screen-size"
+import { ThemeProvider } from "@/providers/theme"
 
 import { cn } from "@/lib/utils"
 import { siteConfig } from "@/lib/site"
@@ -84,7 +85,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           caskaydiaCode.variable
         )}
       >
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
         <ScreenSize />
       </body>
     </html>

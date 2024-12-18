@@ -9,7 +9,7 @@ const h2 = ({ ...props }: HTMLProps<HTMLHeadingElement>) => {
   return (
     <h2
       className={cn(
-        "mb-6 mt-10 font-heading text-xl font-black tracking-tight text-foreground",
+        "mb-6 mt-10 font-heading text-xl font-black tracking-tight text-accent",
         "first:mt-0 md:text-2xl"
       )}
       {...props}
@@ -21,7 +21,7 @@ const h3 = ({ ...props }: HTMLProps<HTMLHeadingElement>) => {
   return (
     <h3
       className={cn(
-        "mb-6 mt-10 font-heading text-lg font-black tracking-tight text-foreground",
+        "mb-6 mt-10 font-heading text-lg font-black tracking-tight text-accent",
         "first:mt-0 md:text-xl"
       )}
       {...props}

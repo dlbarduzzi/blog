@@ -2,6 +2,7 @@ import Link from "next/link"
 
 import { Logo } from "@/components/logo"
 import { Container } from "@/components/container"
+import { ToggleTheme } from "@/components/toggle-theme"
 
 import { cn } from "@/lib/utils"
 
@@ -24,7 +25,7 @@ export function Header() {
           </div>
           <div className="flex items-center gap-x-4">
             <div>
-              <p className="text-sm">Theme</p>
+              <ToggleTheme />
             </div>
           </div>
         </div>
