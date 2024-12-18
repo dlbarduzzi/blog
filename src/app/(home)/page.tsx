@@ -1,26 +1,21 @@
 import Link from "next/link"
+
 import { allPosts } from "content-collections"
 import { Container } from "@/components/container"
+
+import { cn } from "@/lib/utils"
 
 export default function Page() {
   const posts = allPosts.toSorted((a, b) => b.date.getTime() - a.date.getTime())
   return (
-    <div className="px-9 py-8">
+    <div className="py-8">
       <Container>
-        <div className="max-w-2xl rounded-md bg-gray-50 p-6">
-          <h1 className="font-bold tracking-tight">A Fun Fact</h1>
-          <p className="pt-7 leading-7">
-            The colors of the rainbow in order are red, orange, yellow, green, blue,
-            indigo and violet. A good way to remember it is ROY G. BIV. My five year old
-            knows the correct way of which the colors of the rainbow goes.
-          </p>
-        </div>
-        <div className="space-y-7 pt-8">
+        <div className="space-y-7">
           {posts.map(post => (
             <Link
               key={post.title}
               href={`/blog/${post._meta.path}`}
-              className="block rounded-md border border-gray-200 bg-gray-50 px-4 py-3"
+              className="group block rounded-md bg-gray-50 px-6 py-5 shadow-md"
             >
               <article>
                 <dl>
@@ -35,10 +30,15 @@ export default function Page() {
                     </time>
                   </dd>
                 </dl>
-                <h3 className="pt-4 font-bold tracking-tight text-gray-900">
+                <h3
+                  className={cn(
+                    "pt-5 font-heading text-lg text-foreground group-hover:text-accent",
+                    "font-black tracking-tight transition-colors"
+                  )}
+                >
                   {post.title}
                 </h3>
-                <p className="leading-7 text-gray-900">{post.description}</p>
+                <p className="leading-7 text-foreground">{post.subtitle}</p>
               </article>
             </Link>
           ))}

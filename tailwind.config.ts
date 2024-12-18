@@ -10,9 +10,15 @@ export default {
   theme: {
     fontFamily: {
       sans: ["var(--font-sans)"],
+      heading: ["var(--font-heading)"],
       code: ["var(--font-code)"],
     },
     extend: {
+      colors: {
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        accent: "hsl(var(--accent))",
+      },
       keyframes: {
         "collapsible-down": {
           from: { height: "0" },

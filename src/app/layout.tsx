@@ -24,6 +24,22 @@ const rubikSans = localFont({
   variable: "--font-sans",
 })
 
+const nunitoSans = localFont({
+  src: [
+    {
+      path: "../fonts/Nunito.ttf",
+      weight: "100 1000",
+      style: "normal",
+    },
+    {
+      path: "../fonts/NunitoItalic.ttf",
+      weight: "100 1000",
+      style: "italic",
+    },
+  ],
+  variable: "--font-heading",
+})
+
 const caskaydiaCode = localFont({
   src: "../fonts/Caskaydia.ttf",
   variable: "--font-code",
@@ -61,9 +77,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head />
       <body
         className={cn(
-          "min-h-screen bg-white font-sans text-base text-black antialiased",
+          "min-h-screen bg-background font-sans text-base text-black antialiased",
           "selection:bg-yellow-200 selection:text-black",
           rubikSans.variable,
+          nunitoSans.variable,
           caskaydiaCode.variable
         )}
       >
