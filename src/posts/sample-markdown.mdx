@@ -1,8 +1,12 @@
 ---
-title: "TailwindCSS"
-subtitle: "Open sourcing TailwindCSS v4.0 progress"
+title: "Sample Markdown"
+subtitle: "A sample markdown document"
 timestamp: "2025-01-08T12:00:00.000Z"
 ---
+
+**Disclaimer:** This is a copy of
+[tailwindcss-v4-alpha](https://tailwindcss.com/blog/tailwindcss-v4-alpha) blog post used
+only for development to test rendering markdown components.
 
 Last summer at Tailwind Connect [I shared a preview of Oxide](https://www.google.com) —
 a new high-performance engine for Tailwind CSS that we’ve been working on, designed to
@@ -21,3 +25,38 @@ us get to a stable release later this year.
 I’ll try keep it brief to save some of the excitement for the stable release, but if you
 like to play with very early and experimental stuff, there should be plenty of
 information here to get you going.
+
+## A new engine, built for speed
+
+The new engine is a ground-up rewrite, using everything we know about the framework now
+to better model the problem space, making things faster with a lot less code.
+
+- Up to 10x faster — we can do a full build of the Tailwind CSS website in 105ms instead
+  of 960ms, or our Catalyst UI kit in 55ms instead of 341ms.
+- Smaller footprint — the new engine is over 35% smaller installed, even with the
+  heavier native packages we ship like the parts we’ve rewritten in Rust and Lightning
+  CSS.
+- Rust where it counts — we’ve migrated some of the most expensive and parallelizable
+  parts of the framework to Rust, while keeping the core of the framework in TypeScript
+  for extensibility.
+- One dependency — the only thing the new engine depends on is Lightning CSS.
+- Custom parser — we wrote our own CSS parser and designed our own data structures
+  tailored to our needs, making parsing over 2x as fast for us as it was with PostCSS. ​
+
+## Unified toolchain
+
+Tailwind CSS v4 isn’t just a plugin anymore — it’s an all-in-one tool for processing
+your CSS. We’ve integrated Lightning CSS directly into the framework so you don’t have
+to configure anything about your CSS pipeline.
+
+- Built-in @import handling — no need to setup and configure a tool like postcss-import.
+- Built-in vendor prefixing — you don’t have to add autoprefixer to your projects
+  anymore.
+- Built-in nesting support — no plugins needed to flatten nested CSS, it works out of
+  the box.
+- Syntax transforms — modern CSS features like oklch() colors and media query ranges are
+  transpiled to syntax with better browser support.
+
+We’re still shipping a PostCSS plugin, but we’re also exploring first-party bundler
+plugins, and we’re shipping an official Vite plugin with this first alpha release that
+you can try out today.
