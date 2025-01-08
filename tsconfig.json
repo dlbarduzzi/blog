@@ -27,7 +27,10 @@
     "paths": {
       "@/*": [
         "./src/*"
-      ]
+      ],
+      "content-collections": [
+        "./.content-collections/generated"
+      ],
     }
   },
   "include": [
