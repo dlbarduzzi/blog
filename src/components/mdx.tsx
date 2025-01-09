@@ -9,7 +9,7 @@ function Heading2({ ...props }: HTMLProps<HTMLHeadingElement>) {
   return (
     <h2
       className={cn(
-        "mb-6 mt-10 font-head text-2xl font-normal tracking-tight",
+        "mb-6 mt-10 font-head text-2xl font-extrabold tracking-tight",
         "text-sky-500 first:mt-0 md:text-2xl"
       )}
       {...props}
