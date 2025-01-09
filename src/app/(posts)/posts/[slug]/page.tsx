@@ -23,7 +23,7 @@ export default async function Page({ params }: Params) {
   }
 
   return (
-    <div className="bg-gray-100">
+    <div className="2xl:bg-gray-100">
       <Container className="h-full">
         <section className="h-full bg-white pb-8 pt-12">
           <article className="mx-auto max-w-4xl">
