@@ -1,0 +1,183 @@
+---
+title: "Big O Notation"
+subtitle: "Understanding Big O Notation"
+timestamp: "2025-01-09T12:00:00.000Z"
+---
+
+Big O notation is a mathematical concept used to describe the efficiency of algorithms
+in computer science. It provides a way to measure and compare the performance of
+different algorithms based on their growth rates as the input size increases.
+Understanding Big O notation is crucial for writing efficient code and optimizing
+applications.
+
+## What is Big O Notation?
+
+Big O notation is used to express the worst-case scenario of an algorithm's time
+complexity or space complexity. It focuses on the dominant factors that affect the
+performance of an algorithm as the input size (‘n’) grows large.
+
+Big O ignores constants and lower-order terms to provide a high-level understanding of
+how an algorithm scales.
+
+### Why is Big O Important?
+
+1. **Performance Prediction**: Helps predict how an algorithm will behave as input size
+   grows.
+2. **Comparison**: Allows developers to compare algorithms and choose the most efficient
+   one.
+3. **Optimization**: Guides optimization efforts by identifying bottlenecks in code.
+
+---
+
+## Common Big O Notations
+
+### 1. **O(1): Constant Time**
+
+The runtime does not depend on the size of the input.
+
+Example:
+
+```python
+# Accessing an element in an array
+array = [1, 2, 3, 4, 5]
+print(array[2])  # Always takes the same time
+```
+
+### 2. **O(log n): Logarithmic Time**
+
+The runtime grows logarithmically as the input size increases. Common in
+divide-and-conquer algorithms like binary search.
+
+Example:
+
+```python
+# Binary search
+array = [1, 2, 3, 4, 5, 6, 7, 8]
+def binary_search(array, target):
+    low, high = 0, len(array) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if array[mid] == target:
+            return mid
+        elif array[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+```
+
+### 3. **O(n): Linear Time**
+
+The runtime grows linearly with the input size. Common in simple loops.
+
+Example:
+
+```python
+# Sum of elements in an array
+array = [1, 2, 3, 4, 5]
+sum = 0
+for num in array:
+    sum += num
+```
+
+### 4. **O(n log n): Linearithmic Time**
+
+Often seen in efficient sorting algorithms like merge sort and quicksort.
+
+Example:
+
+```python
+# Merge sort implementation
+def merge_sort(array):
+    if len(array) <= 1:
+        return array
+    mid = len(array) // 2
+    left = merge_sort(array[:mid])
+    right = merge_sort(array[mid:])
+    return merge(left, right)
+
+def merge(left, right):
+    result = []
+    while left and right:
+        if left[0] < right[0]:
+            result.append(left.pop(0))
+        else:
+            result.append(right.pop(0))
+    result.extend(left or right)
+    return result
+```
+
+### 5. **O(n^2): Quadratic Time**
+
+The runtime grows quadratically with the input size. Common in nested loops.
+
+Example:
+
+```python
+# Check for duplicates in an array
+array = [1, 2, 3, 4, 5]
+for i in range(len(array)):
+    for j in range(i + 1, len(array)):
+        if array[i] == array[j]:
+            print("Duplicate found")
+```
+
+### 6. **O(2^n): Exponential Time**
+
+The runtime doubles with each additional input. Common in recursive algorithms that
+solve combinatorial problems.
+
+Example:
+
+```python
+# Fibonacci sequence using recursion
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+```
+
+### 7. **O(n!): Factorial Time**
+
+The runtime grows factorially with the input size. Seen in problems that involve
+generating all permutations.
+
+Example:
+
+```python
+# Generate permutations
+def permutations(array):
+    if len(array) == 0:
+        return [[]]
+    result = []
+    for i in range(len(array)):
+        rest = array[:i] + array[i+1:]
+        for perm in permutations(rest):
+            result.append([array[i]] + perm)
+    return result
+```
+
+---
+
+## Visualizing Big O Growth Rates
+
+| Notation   | Growth Rate  |
+| ---------- | ------------ |
+| O(1)       | Constant     |
+| O(log n)   | Logarithmic  |
+| O(n)       | Linear       |
+| O(n log n) | Linearithmic |
+| O(n^2)     | Quadratic    |
+| O(2^n)     | Exponential  |
+| O(n!)      | Factorial    |
+
+---
+
+## Key Takeaways
+
+- Big O notation simplifies complex algorithm analysis.
+- Focus on scalability by considering the dominant term.
+- Prioritize efficient algorithms to optimize performance.
+
+Understanding Big O is essential for writing scalable, efficient code. The next time
+you’re designing or optimizing an algorithm, remember to consider its Big O complexity!
