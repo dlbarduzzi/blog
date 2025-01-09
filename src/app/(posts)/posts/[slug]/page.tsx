@@ -1,10 +1,12 @@
-import { Container } from "@/components/container"
-
 import { notFound } from "next/navigation"
 import { allPosts } from "content-collections"
 
-import { cn } from "@/lib/utils"
 import { Mdx } from "@/components/mdx"
+import { BlogHeader } from "@/components/blog-header"
+import { BlogFooter } from "@/components/blog-footer"
+import { Container } from "@/components/container"
+
+import { cn } from "@/lib/utils"
 
 export function generateStaticParams(): { slug: string }[] {
   return allPosts.map(post => ({ slug: post._meta.path }))
@@ -25,8 +27,9 @@ export default async function Page({ params }: Params) {
   return (
     <div className="2xl:bg-gray-100">
       <Container className="h-full">
-        <section className="h-full bg-white pb-8 pt-12">
-          <article className="mx-auto max-w-4xl">
+        <section className="h-full bg-white">
+          <BlogHeader />
+          <article className="mx-auto max-w-4xl py-12">
             <div>
               <div className="text-left md:text-center">
                 <dl>
@@ -57,6 +60,7 @@ export default async function Page({ params }: Params) {
               </div>
             </div>
           </article>
+          <BlogFooter />
         </section>
       </Container>
     </div>
